@@ -25,7 +25,7 @@ class Category:
 
     def _validate_name(self):
         if not self.name:
-            raise TypeError("Name is required")
+            raise ValueError("Name is required")
         if len(self.name) > 255:
             raise ValueError("Name must be less than 255 characters")
         

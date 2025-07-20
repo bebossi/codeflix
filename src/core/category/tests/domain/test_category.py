@@ -13,7 +13,7 @@ class TestCategory(unittest.TestCase):
             Category(name="a" * 256)
 
     def test_name_is_not_none(self):
-        with pytest.raises(TypeError, match="Name is required"):
+        with pytest.raises(ValueError, match="Name is required"):
             Category(name='')
 
     def test_category_id_is_uuid(self):
