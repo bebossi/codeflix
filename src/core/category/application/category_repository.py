@@ -7,5 +7,5 @@ class CategoryRepository(ABC):
         pass
 
     @abstractmethod
-    def find_by_id(self, id: str) -> Category:
+    def find_by_id(self, id: str) -> Category | None:
         pass
