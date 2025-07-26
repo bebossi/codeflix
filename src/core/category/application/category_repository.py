@@ -17,3 +17,7 @@ class CategoryRepository(ABC):
     @abstractmethod
     def update(self, category: Category) -> None:
         pass
+
+    @abstractmethod
+    def list(self) -> list[Category]:
+        pass

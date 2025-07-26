@@ -21,3 +21,6 @@ class InMemoryCategoryRepository(CategoryRepository):
         old_category = self.find_by_id(category.id)
         if old_category:
             old_category.update(name=category.name, description=category.description, is_active=category.is_active)
+
+    def list(self) -> list[Category]:
+        return [category for category in self.categories]
