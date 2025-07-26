@@ -13,3 +13,7 @@ class CategoryRepository(ABC):
     @abstractmethod
     def delete(self, id: str) -> None:
         pass
+
+    @abstractmethod
+    def update(self, category: Category) -> None:
+        pass

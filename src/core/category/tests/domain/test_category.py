@@ -36,14 +36,14 @@ if __name__ == "__main__":
 class TestUpdateCategory(unittest.TestCase):
     def test_update_category(self):
         category = Category(name="Test Category")
-        category.update_category(name="Updated Category", description="Updated Description")
+        category.update(name="Updated Category", description="Updated Description", is_active=True)
         assert category.name == "Updated Category"
         assert category.description == "Updated Description"
 
     def test_update_category_with_invalid_name(self):
         category = Category(name="Test Category")
         with pytest.raises(ValueError, match="Name must be less than 255 characters"):  
-            category.update_category(name="a" * 256, description="Updated Description")
+            category.update(name="a" * 256, description="Updated Description", is_active=True)
 
     def test_update_category_with_invalid_name_and_description(self):
         category = Category(name="Test Category")

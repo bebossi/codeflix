@@ -29,9 +29,10 @@ class Category:
         if len(self.name) > 255:
             raise ValueError("Name must be less than 255 characters")
         
-    def update_category(self, name: str, description: str):
+    def update(self, name: str, description: str, is_active: bool):
         self.name = name
         self.description = description
+        self.is_active = is_active
         self._validate_name()
 
     def __eq__(self, other):
